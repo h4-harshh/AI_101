@@ -28,11 +28,11 @@
 
 
 .main .greet{
-    margin:50px 0px;
+    margin:10px 0px;
     font-size: 56px;
     color:#c4c7c4;
     font-weight: 500;
-    padding:20px;
+    padding:10px;
 }
 
 .main .greet span{
@@ -49,7 +49,7 @@
 }
 
 .main .card{
-    height: 200px;
+    height: 180px;
     padding: 15px;
     background-color: #f0f4f9;
     border-radius: 10px;
@@ -101,13 +101,22 @@
 }
 
 
-.search-box input{
+.search-box textarea{
     flex:1;
     background: transparent;
     border:none;
     outline:none;
     padding: 8px;
     font-size: 18px;
+    overflow: hidden;
+    height: 1.5rem;   
+    resize: none;        
+    padding: 1rem;    
+    box-sizing: border-box; 
+    font-size: 1rem;      
+    line-height: 1.5rem;  
+    border-radius: 4px; 
+    justify-content: center;
 }
 
 .search-box div{
@@ -121,4 +130,87 @@
     margin:15px auto;
     text-align: center;
     font-weight: 300;
+}
+
+
+.result{
+    padding:0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar{
+    display: none;
+}
+
+.result-title{
+    margin:40px 0px;
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.result img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-data{
+    display: flex;
+    align-items: start;
+    gap:20px;
+}
+
+.loader{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr{
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation:loader 3s infinite linear;
+}
+@keyframes loader {
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
+
+
+.result-data p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+
+
+/* responsive */
+@media (max-width:600px) {
+    .cards{
+        margin-bottom: 20px;
+    }
+    .main-bottom textarea{
+        flex:none;
+        width:150px;
+    }
+    .main-bottom img{
+        width:20px;
+    }
+    .search-box{
+        padding: 5px 10px;
+    }
+    .search-box div{
+        gap: 5px;
+    }
 }
