@@ -16,6 +16,9 @@ const Main = () => {
           } else if (input) {
             e.preventDefault();
             onSent(input);
+            // onClick={()=>onSent()
+            // {input?<img onClick={()=>onSent()} src={assets.send_icon} alt="" />:null}
+            onSent()
           }
         }
     };
